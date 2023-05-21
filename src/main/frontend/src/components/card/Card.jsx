@@ -2,9 +2,16 @@
 
 
  export default function Card(props){
+
+    console.log(props.data.pic);
+    const cardStyle = {
+        backgroundImage : `url(/artists/abtin/${props.data.pic})`
+    }
+
+
     return(
         <div className={styles.container}>
-            <div className={styles.img}>
+            <div style={cardStyle} className={styles.img}>
 
             </div>
 

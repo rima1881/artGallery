@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import quebec.stranger.artGallery.models.Artist;
 import quebec.stranger.artGallery.models.Poster;
 import quebec.stranger.artGallery.services.PosterService;
 
@@ -24,4 +25,5 @@ public class PosterController {
     public List<Poster> GetAll() {
         return posterService.getAll();
     }
+
 }

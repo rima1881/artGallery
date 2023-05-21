@@ -1,30 +1,35 @@
-import Card from "../card/Card";
 import styles from './Container.module.css'
+import Header from "./header/Header";
+import List from "./list/List";
+import { useState , useEffect } from 'react';
 
 export default function Container(){
+
+    const [listData, setListData] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:8080/api/posters')
+            .then(Response => Response.json())
+            .then(data => setListData(data))
+
+            console.log('Request was sent')
+    },[])
+
+
     return(
         <>
-        <div className={styles.headerContainer}>
-            <p className={styles.header}> Our <nav className={styles.headerInner}>&nbsp;Posters!!! </nav></p>
-        </div>
 
-        <hr  className={styles.line}/>
+            <Header />
 
-        <div className={styles.container}>
+            <div className={styles.headerContainer}>
+                <p className={styles.header}> Our <nav className={styles.headerInner}>&nbsp;Posters!!! </nav></p>
+            </div>
 
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-        </div>
+            <hr  className={styles.line}/>
+
+            <div className={styles.container}>
+                <List data={listData} />
+            </div>
         </>
     )
 
