@@ -1,12 +1,15 @@
 package quebec.stranger.artGallery.models;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 import java.util.Set;
 
 @Entity
 @Table(name="artists")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
 public class Artist {
 
     // Properties
@@ -27,7 +30,6 @@ public class Artist {
     @Column(name = "artist_email")
     private String artistEmail;
 
-    @JsonManagedReference
     @OneToMany(mappedBy = "artist")
     private Set<Poster> posters;
 

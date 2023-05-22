@@ -1,9 +1,12 @@
 package quebec.stranger.artGallery.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "posters")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
 public class Poster {
 
     // Properties
@@ -28,7 +31,6 @@ public class Poster {
     private int price;
 
 
-    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "artist_id" , nullable = false)
     private Artist artist;

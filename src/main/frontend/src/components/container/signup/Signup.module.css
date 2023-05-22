@@ -1,0 +1,26 @@
+.container{
+    width: 100%;
+    background-color: red;
+    height: calc(100vh-70px);
+    display: flex;
+}
+.form{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    width: 50%;
+}
+.form label{
+    
+}
+.from input{
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+}
+.form button{
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+}

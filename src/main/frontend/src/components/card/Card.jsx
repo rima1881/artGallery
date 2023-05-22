@@ -5,7 +5,7 @@
 
     console.log(props.data.pic);
     const cardStyle = {
-        backgroundImage : `url(/artists/abtin/${props.data.pic})`
+        backgroundImage : `url(/artists/${props.data.artist.id}/${props.data.pic})`
     }
 
 
