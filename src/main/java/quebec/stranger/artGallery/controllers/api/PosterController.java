@@ -11,7 +11,7 @@ import quebec.stranger.artGallery.services.PosterService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/posters")
 public class PosterController {
 
     private PosterService posterService;
@@ -21,7 +21,7 @@ public class PosterController {
         posterService = thePosterService;
     }
 
-    @GetMapping("/posters")
+    @GetMapping("")
     public List<Poster> GetAll() {
         return posterService.getAll();
     }

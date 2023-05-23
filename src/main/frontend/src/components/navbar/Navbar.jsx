@@ -13,25 +13,25 @@ export default function Navbar(props){
         <nav className={styles.navbar}>
             <ul className={cliked && styles.active}>
                 <li>
-                    <a onClick={() =>props.pageStateHandle(0)}>
+                    <a>
                         <FontAwesomeIcon icon={faHome} className={styles.navIcons}/>
                         Home
                     </a>
                 </li>
                 <li>
-                    <a onClick={() =>props.pageStateHandle(5)}>
+                    <a>
                     <FontAwesomeIcon icon={faCalendarTimes} className={styles.navIcons}/>
                         Coming soon
                     </a>
                 </li>
                 <li>
-                    <a onClick={() =>props.pageStateHandle(4)}>
+                    <a>
                     <FontAwesomeIcon icon={faDollarSign} className={styles.navIcons}/>
                         Donation
                     </a>
                 </li>
                 <li>
-                    <a onClick={() =>props.pageStateHandle(3)}>
+                    <a>
                     <FontAwesomeIcon icon={faCircleInfo} className={styles.navIcons}/>
                         About Us
                     </a>
@@ -53,9 +53,11 @@ export default function Navbar(props){
                 <span onClick={props.loginBtnHandle}>
                     <FontAwesomeIcon icon={faCircleUser} className={styles.navIcons}/>
                     Login
+                    &nbsp;
                 </span>
-                 | 
-                 <span onClick={() => props.pageStateHandle(2)}>
+                 |
+                 <span onClick={props.signupBtnHandle}>
+                    &nbsp; 
                     Sign Up
                  </span>
             </span>

@@ -58,14 +58,6 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -106,5 +98,10 @@ public class User {
                 ", pic='" + pic + '\'' +
                 ", orders=" + orders +
                 '}';
+    }
+
+
+    public boolean checkPassword(String pwd){
+        return this.password == pwd;
     }
 }
